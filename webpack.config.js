@@ -51,7 +51,7 @@ module.exports = [
   {
     entry: './src/client/browser.js',
     output: {
-      path: './dist/assets',
+      path: './dist/assets/js',
       publicPath: '/',
       filename: 'bundle.js'
     },
