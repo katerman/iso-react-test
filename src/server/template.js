@@ -5,14 +5,14 @@ export default ({ body, title, initialState }) => {
       <head>
         <script>window.__APP_INITIAL_STATE__ = ${initialState}</script>
         <title>${title}</title>
-        <link rel="stylesheet" href="/assets/index.css" />
+        <link rel="stylesheet" href="/dist/assets/index.css" />
       </head>
-      
+
       <body>
         <div id="root">${body}</div>
       </body>
-      
-      <script src="/assets/bundle.js"></script>
+
+      <script src="/dist/assets/bundle.js"></script>
     </html>
   `;
 };

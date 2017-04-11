@@ -7,23 +7,13 @@ import template from './template';
 const server = express();
 const port = 7998;
 
-server.use('/assets', express.static('assets'));
+server.use('/dist', express.static('dist'));
 
-server.get('/', (req, res) => {
+server.get(['*'], (req, res) => {
   const isMobile = true;
-  const initialState = { isMobile };
-  const appString = renderToString(<App {...initialState} location={req.url} />);
-  res.send(template({
-    body: appString,
-    title: 'Hello World from the server',
-    initialState: JSON.stringify(initialState)
-  }));
-});
-
-server.get('/about', (req, res) => {
-  const isMobile = true;
-  const initialState = { isMobile };
-  const appString = renderToString(<App {...initialState} location={req.url} />);
+  const initialState = { isMobile, location: req.url };
+  const appString = renderToString(<App {...initialState}/>);
+  console.log(req.url);
   res.send(template({
     body: appString,
     title: 'Hello World from the server',
