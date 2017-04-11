@@ -21,7 +21,6 @@
     "functionhappy": "^1.0.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.13.1",
-    "nodemon": "^1.11.0",
     "sass-loader": "^4.0.0",
     "snazzy": "^4.0.0",
     "webpack": "^1.13.1",
@@ -31,7 +30,7 @@
     "build": "webpack --progress --colors --watch & npm run build-css",
     "lint": "functionhappy | snazzy",
     "start": "cd dist && node server",
-    "build-css": "node-sass --include-path scss assets/styles/main.scss dist/assets/css/main.css"
+    "build-css": "node-sass assets/styles/main.scss dist/assets/css/main.css -w"
   },
   "author": "",
   "license": "ISC"
